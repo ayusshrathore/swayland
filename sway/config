@@ -17,8 +17,17 @@ set $term alacritty
 # Browser
 set $browser google-chrome-stable
 
+# VS Code
+set $code code
+
+# Telegram
+set $telegram telegram-desktop
+
 # Menu
-set $menu wofi --show run
+# set $menu wofi --show run
+set $menu "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"
+
+xwayland enable
 
 # Font config
 font pango: Ubuntu:style=Regular 11
@@ -43,7 +52,8 @@ gaps inner 10
 output * bg /home/freaker/Pictures/wallpaper.jpg fill
 
 # Autostart
-exec libinput-gestures
+exec --no-startup-id libinput-gestures
+exec --no-startup-id mako
 
 ### Idle configuration
  exec swayidle -w \
@@ -96,6 +106,12 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Start browser
     bindsym $mod+c exec $browser
+
+    # Start VS Code
+    bindsym $mod+v exec $code
+
+    # Start Telegram
+    bindsym $mod+t exec $telegram
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -166,8 +182,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+Shift+b splith
+    bindsym $mod+Shift+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
