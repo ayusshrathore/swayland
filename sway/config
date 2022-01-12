@@ -10,6 +10,10 @@ set $down j
 set $up k
 set $right l
 
+# Player
+set $next playerctl next
+set $previous playerctl previous
+set $pause playerctl play-pause
 
 # Terminal 
 set $term alacritty
@@ -22,6 +26,9 @@ set $code code
 
 # Telegram
 set $telegram telegram-desktop
+
+# Screenshot
+set $grim grim
 
 # Menu
 # set $menu wofi --show run
@@ -111,6 +118,14 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Start Telegram
     bindsym $mod+t exec $telegram
+
+    # Start Grim
+    bindsym $mod+g exec $grim
+
+    # Start Playerctl
+    bindsym Ctrl+m exec $next
+    bindsym Ctrl+n exec $previous
+    bindsym Ctrl+space exec $pause
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
