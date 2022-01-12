@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "pulseaudio", "network", "memory", "backlight", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": [ "pulseaudio", "network", "memory", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -74,15 +74,16 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a %d %b}"
     },
     "cpu": {
         "format": "CPU: {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "RAM: {}%"
+        "format": "RAM: {}%",
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -95,7 +96,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": ["", ""]
     },
     "battery": {
         "states": {
@@ -103,21 +104,19 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+       "format": "<span font='Font Awesome 5 Free 9'>{icon}</span> {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "format-full": "{capacity}% "
+        // "format-plugged": "{capacity}% ",
+        // "format-alt": "{time} {icon}"
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
+        
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-wifi": "<span font='Font Awesome 5 Free 10'></span>  {essid}",
+        "format-ethernet": " {ifname}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
