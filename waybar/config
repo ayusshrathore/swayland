@@ -104,21 +104,21 @@
             "warning": 30,
             "critical": 15
         },
-       "format": "<span font='Font Awesome 5 Free 9'>{icon}</span> {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "{capacity}% ",
-        "format-full": "{capacity}% "
-        // "format-plugged": "{capacity}% ",
+        "format-full": "{capacity}% ",
+        "format-plugged": "{capacity}% "
         // "format-alt": "{time} {icon}"
         // "format-good": "", // An empty format will hide the module
         
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "<span font='Font Awesome 5 Free 10'></span> {essid}",
+        "format-wifi": "<span font='Font Awesome 5 Free 9'></span> {essid}",
         "format-ethernet": " {ifname}",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "No Intenet!",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -139,6 +139,9 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "tray": {
+       "icon-size": 20
     },
     "custom/media": {
         "format": "{icon} {}",
