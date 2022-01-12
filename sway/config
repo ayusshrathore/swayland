@@ -15,11 +15,14 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
+set $browser google-chrome-stable
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show run
-font pango: Ubuntu Regular 11
+
+# Font config
+font pango: Ubuntu:style=Regular 11
 
 # Configure gaps between windows
 gaps inner 10
@@ -30,9 +33,9 @@ default_border pixel 2
 
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Wallpaper
 output * bg /home/freaker/Pictures/wallpaper.jpg fill
+
 #
 # Example configuration:
 #
@@ -84,6 +87,9 @@ output * bg /home/freaker/Pictures/wallpaper.jpg fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Start browser
+    bindsym $mod+c exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
