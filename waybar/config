@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "network", "memory", "backlight", "pulseaudio", "battery", "clock", "tray"],
+    "modules-right": [ "tray", "network", "memory", "backlight", "pulseaudio", "battery", "clock"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -83,7 +83,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "RAM: {}%",
+        "format": " {}%",
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -105,7 +105,7 @@
             "critical": 15
         },
        "format": "<span font='Font Awesome 5 Free 9'>{icon}</span> {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", "", ""],
         "format-charging": "{capacity}% ",
         "format-full": "{capacity}% "
         // "format-plugged": "{capacity}% ",
@@ -127,7 +127,7 @@
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": "{icon}",
         "format-muted": "{format_source}",
-	"format-source": "",
+	"format-source": "",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
