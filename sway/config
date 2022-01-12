@@ -34,17 +34,15 @@ font pango: Ubuntu:style=Regular 11
 
 # Configure gaps between windows
 gaps inner 10
-gaps outer 5
+gaps outer 3
 
-# Window Borders
-
-# default_border pixel 2 
-default_border pixel 1
+# Window Borders 
+default_border pixel 2
 default_floating_border normal
-hide_edge_borders smart
+# hide_edge_borders smart
 
-smart_gaps on
-gaps inner 10
+# smart_gaps on
+
 
 
 ### Output configuration
@@ -54,6 +52,7 @@ output * bg /home/freaker/Pictures/wallpaper.jpg fill
 # Autostart
 exec --no-startup-id libinput-gestures
 exec --no-startup-id mako
+exec_always --no-startup-id autotiling
 
 ### Idle configuration
  exec swayidle -w \
