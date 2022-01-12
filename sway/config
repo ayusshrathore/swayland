@@ -31,7 +31,6 @@ set $telegram telegram-desktop
 set $grim grim
 
 # Menu
-# set $menu wofi --show run
 set $menu "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"
 
 xwayland enable
@@ -102,10 +101,10 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym Alt+Return exec $term
 
     # Kill focused window
-    bindsym $mod+w kill
+    bindsym Alt+w kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
