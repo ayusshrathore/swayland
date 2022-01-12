@@ -120,7 +120,7 @@
         "format-ethernet": " {ifname}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "No Intenet!",
-        "format-alt": "{essid}"
+        "format-alt": "{essid} {signalStrength}%"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
