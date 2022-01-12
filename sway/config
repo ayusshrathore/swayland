@@ -21,6 +21,13 @@ set $term alacritty
 set $menu wofi --show run
 font pango: Ubuntu Regular 11
 
+# Configure gaps between windows
+gaps inner 10
+gaps outer 5
+
+# Disable windows title
+default_border pixel 2 
+
 
 ### Output configuration
 #
