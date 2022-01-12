@@ -70,6 +70,7 @@
     },
     "tray": {
         // "icon-size": 21,
+        "icon-size": 20,
         "spacing": 10
     },
     "clock": {
@@ -115,11 +116,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "<span font='Font Awesome 5 Free 9'></span> {essid}",
+        "format-wifi": " ",
         "format-ethernet": " {ifname}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "No Intenet!",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{essid}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -139,9 +140,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "tray": {
-       "icon-size": 20
     },
     "custom/media": {
         "format": "{icon} {}",
