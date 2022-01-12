@@ -7,6 +7,7 @@
 -   rofi
 -   alacritty
 -   grim
+-   mako
 -   playerctl
 -   brightnessctl
 -   xorg-xwayland
