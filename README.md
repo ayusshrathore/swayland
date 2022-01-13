@@ -12,3 +12,7 @@
 -   `brightnessctl` - Brightness Daemon
 -   `xorg-xwayland` - X Clients on Wayland
 -   `autotiling` - Tiling for Sway
+
+# Screenshots
+
+![Sway_Arch](https://github.com/ayush-rathore/swayland/raw/assets/Sway.png)
