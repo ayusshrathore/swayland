@@ -65,6 +65,16 @@ tooltip {
 	border-bottom: 3px solid #ffffff;
 }
 
+#custom-powerctrl {
+	/* padding: 10px; */
+	/* margin: 10px 10px 10px 5px; */
+	border-radius: 5;
+	margin-right: 10px;
+	margin-left: 5px;
+	/* color: #d6b692; */
+	/* font-size: 16px; */
+}
+
 #clock,
 #battery,
 #cpu,
