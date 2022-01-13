@@ -27,14 +27,12 @@ set $code code
 # Telegram
 set $telegram telegram-desktop
 
-# Screenshot
-set $grim grim
-
 # Thunar
 set $thunar thunar
 
 # Menu
-set $menu "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"
+# set $menu "rofi -combi-modi drun,run -show combi -show-icons"
+set $menu exec wofi --show=drun --line=6  --width=300
 
 xwayland enable
 
@@ -60,7 +58,7 @@ output * bg /home/freaker/Pictures/wallpaper.jpg fill
 
 # Autostart
 exec --no-startup-id libinput-gestures
-exec --no-startup-id mako
+exec --no-startup-id mako --default-timeout 3000
 exec_always --no-startup-id autotiling
 
 ### Idle configuration
@@ -121,8 +119,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     # Start Telegram
     bindsym $mod+t exec $telegram
 
-    # Start Grim
-    bindsym $mod+g exec $grim
+    # Screenshot
+    bindsym Print exec grim screenshot.png
 
     # Start Thunar
     bindsym Alt+f exec $thunar 
