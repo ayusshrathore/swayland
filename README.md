@@ -1,13 +1,13 @@
 # Required packages
 
--   sway
--   swaylock
--   swayidle
--   waybar
--   rofi
--   alacritty
--   grim
--   mako
--   playerctl
--   brightnessctl
--   xorg-xwayland
+-   `sway` - Windows Manager for Wayland
+-   `swaylock` - Locker for sway
+-   `swayidle` - Idle manager for sway
+-   `waybar` - Status Bar for Wayland
+-   `wofi` - Menu & Launcher
+-   `alacritty` - Terminal
+-   `grim` - Screenshot Utility
+-   `mako` - Notification Daemon
+-   `playerctl` - Media Player Daemon
+-   `brightnessctl` - Brightness Daemon
+-   `xorg-xwayland` - X Clients on Wayland
