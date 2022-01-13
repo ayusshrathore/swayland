@@ -1,8 +1,8 @@
 {
     "height": 30,
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["sway/window"],
-    "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery", "clock"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
@@ -16,32 +16,15 @@
              "focused": ""
          }
      },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         "icon-size": 20,
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%a %d %b}"
+        "format": "{:%a %d %b %I:%M %p}"
     },
     "memory": {
         "format": " {}%"
@@ -90,17 +73,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     }
 }
 
