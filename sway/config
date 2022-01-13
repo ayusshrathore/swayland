@@ -30,6 +30,9 @@ set $telegram telegram-desktop
 # Screenshot
 set $grim grim
 
+# Thunar
+set $thunar thunar
+
 # Menu
 set $menu "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"
 
@@ -120,6 +123,9 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Start Grim
     bindsym $mod+g exec $grim
+
+    # Start Thunar
+    bindsym Alt+f exec $thunar 
 
     # Start Playerctl
     bindsym Ctrl+m exec $next
