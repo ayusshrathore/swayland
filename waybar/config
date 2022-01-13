@@ -2,26 +2,20 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery", "clock", "custom/powerctrl"],
+    "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery", "clock"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{icon}",
+	 "persistent_workspaces": {
+	 		"1": []
+	 },
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
              "default": "",
              "urgent": "",
              "focused": ""
-        }
+         }
      },
-    "custom/powerctrl": {
-        "tooltip": false,
-        "format": "",
-        "on-click": "bash /home/freaker/.config/waybar/powerctrl.sh"
-    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
