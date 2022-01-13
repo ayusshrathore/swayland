@@ -1,6 +1,6 @@
 ignore-empty-password
 disable-caps-lock-text
-image=/home/freaker/Pictures/wallpaper.jpg
+image=~/Pictures/wallpaper.jpg
 font=JetBrainsMono Nerd Font
 
 text-ver-color=00000000
