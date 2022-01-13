@@ -1,0 +1,71 @@
+add_newline = true
+command_timeout = 10000
+
+[battery]
+disabled = true
+
+[character]
+success_symbol = "[➜](bold green)" 
+error_symbol = "[➜](bold red)"
+
+[cmd_duration]
+min_time = 5000
+format = "took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = "🌱 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_status]
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = "✓"
+untracked =	"?"
+stashed = "$"
+modified = "!"
+staged = '[+\($count\)](green)'
+renamed = "»"
+deleted = "✘"
+style = "bold purple"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[package]
+disabled = true
+
+[nodejs]
+format = "via [⬢ $version](bold green) "
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[username]
+style_user = "bold blue"
+show_always = false
+
+[shell]
+zsh_indicator = ""
+powershell_indicator = "_"
+unknown_indicator = "zsh shell"
+style = "bold blue"
+disabled = false
