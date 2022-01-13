@@ -34,8 +34,7 @@ set $thunar thunar
 set $power "bash ~/.config/sway/powerctrl.sh"
 
 # Menu
-# set $menu "rofi -combi-modi drun,run -show combi -show-icons"
-set $menu exec wofi --show=drun --line=6  --width=300
+set $menu exec wofi --show=drun --line=6 --width=300
 
 xwayland enable
 
@@ -46,6 +45,8 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Yaru-Blue-dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'Ubuntu Medium 11'
+    gsettings set $gnome-schema document-font-name 'Ubuntu Regular 11'
+    gsettings set $gnome-schema monospace-font-name 'Source Code Pro 10'
 }
 
 # Font config
@@ -79,9 +80,10 @@ exec_always --no-startup-id autotiling
 
 ### Idle configuration
  exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+          timeout 300 'swaylock -f' \
+          timeout 600 'swaymsg "output * dpms off"' \
+          after-resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f'
 
 ### Input configuration
 

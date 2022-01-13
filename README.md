@@ -1,6 +1,6 @@
 # Required packages
 
--   `sway` - Windows Manager for Wayland
+-   `sway` - Window Manager for Wayland
 -   `swaylock` - Locker for sway
 -   `swayidle` - Idle manager for sway
 -   `waybar` - Status Bar for Wayland
@@ -11,3 +11,4 @@
 -   `playerctl` - Media Player Daemon
 -   `brightnessctl` - Brightness Daemon
 -   `xorg-xwayland` - X Clients on Wayland
+-   `autotiling` - Tiling for Sway
