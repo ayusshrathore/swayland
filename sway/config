@@ -58,7 +58,7 @@ output * bg /home/freaker/Pictures/wallpaper.jpg fill
 
 # Autostart
 exec --no-startup-id libinput-gestures
-exec --no-startup-id mako --default-timeout 3000
+exec --no-startup-id mako
 exec_always --no-startup-id autotiling
 
 ### Idle configuration
