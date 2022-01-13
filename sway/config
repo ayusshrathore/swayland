@@ -54,14 +54,13 @@ font pango: Ubuntu:style=Regular 11
 
 # Configure gaps between windows
 gaps inner 10
-gaps outer 3
 
 # Window Borders 
-default_border pixel 3
+default_border pixel 2
 default_floating_border normal
 # hide_edge_borders smart
 
-# smart_gaps on
+smart_gaps on
 
 ## Window decoration
 # class          border  backgr. text    indicator child_border
@@ -232,10 +231,10 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
