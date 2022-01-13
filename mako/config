@@ -11,13 +11,14 @@ margin=20,20,0
 padding=15,15,15
 border-size=2
 border-radius=10
+border-color=#1E88E5
 progress-color=over #332E41
 default-timeout=5000
 group-by=summary
-format=<span font="JetBrainsMono Nerd Font" size="12288">%s</span>\n<span font="JetBrainsMono Nerd Font" size="12288">%b</span>
+format=<span font="JetBrainsMono Nerd Font">%s</span>\n<span font="JetBrainsMono Nerd Font">%b</span>
 
 [grouped]
-format=<span font="JetBrainsMono Nerd Font" size="12288">%s</span>\n<span font="JetBrainsMono Nerd Font" size="12288">%b</span>
+format=<span font="JetBrainsMono Nerd Font">%s</span>\n<span font="JetBrainsMono Nerd Font">%b</span>
 
 [mode=do-not-disturb]
 invisible=1
