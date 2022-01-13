@@ -6,23 +6,22 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "tray", "network", "memory", "backlight", "pulseaudio", "battery", "clock"],
+    "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery", "clock"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "default": "",
+             "urgent": "",
+             "focused": "",
+        }
+     },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -125,7 +124,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
+        "format-bluetooth": "",
         "format-bluetooth-muted": "{format_source}",
         "format-muted": "{format_source}",
 	"format-source": "",
