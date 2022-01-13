@@ -6,8 +6,8 @@ set $mod Mod4
 
 # Home row direction keys, like vim
 set $left h
-set $down j
-set $up k
+set $down k
+set $up j
 set $right l
 
 # Player
@@ -44,11 +44,15 @@ gaps inner 10
 gaps outer 3
 
 # Window Borders 
-default_border pixel 2
+default_border pixel 3
 default_floating_border normal
 # hide_edge_borders smart
 
 # smart_gaps on
+
+## Window decoration
+# class          border  backgr. text    indicator child_border
+client.focused   #1E88E5 #1E88E5 #f0f0f0 #1E88E5   #1E88E5
 
 
 
@@ -204,7 +208,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-    bindsym $mod+Shift+q layout tabbed
+    bindsym $mod+q layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -239,8 +243,8 @@ mode "resize" {
     # up will shrink the containers height
     # down will grow the containers height
     bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
+    bindsym $up resize grow height 10px
+    bindsym $down resize shrink height 10px
     bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
