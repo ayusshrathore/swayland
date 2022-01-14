@@ -1,5 +1,8 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+env:
+  TERM: xterm-256color
+  
 # Font configuration (changes require restart)
 font:
     # Normal (roman) font face
