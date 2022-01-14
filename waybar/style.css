@@ -62,7 +62,7 @@ tooltip {
 #pulseaudio,
 #tray,
 #mode {
-	padding: 0 5px;
+	padding: 0 4px;
 	margin: 0 4px;
 	color: #ffffff;
 }
@@ -72,10 +72,27 @@ tooltip {
 	color: #81c784;
 }
 
+#network {
+    font-size: 15px;
+}
+
+#network.disconnected {
+    font-size: 14px;
+}
+
 #memory,
 #pulseaudio,
 #pulseaudio.muted {
 	color: #f48fb1;
+}
+
+#memory.icon {
+    font-size: 15px;
+}
+
+#pulseaudio,
+#pulseaudio.muted {
+     font-size: 15px;
 }
 
 #clock {

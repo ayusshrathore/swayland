@@ -27,7 +27,7 @@
         "format": "{:%a %d %b %I:%M %p}"
     },
     "memory": {
-        "format": " {}%"
+        "format": " {}%"
     },
     "backlight": {
         "format": "{icon} {percent}%",
