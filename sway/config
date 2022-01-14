@@ -137,7 +137,9 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+t exec $telegram
 
     # Screenshot
-    bindsym Print exec grim screenshot.png
+    bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'Screenshot_%Y-%m-%d.png')
+    bindsym Shift+Print exec grim -g "$(slurp)"
+    bindsym Ctrl+Print exec grim - | wl-copy
 
     # Start Files
     bindsym Alt+f exec $files 
