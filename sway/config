@@ -27,8 +27,8 @@ set $code code
 # Telegram
 set $telegram telegram-desktop
 
-# Thunar
-set $thunar thunar
+# Nautilus
+set $files nautilus
 
 # Power
 set $power "bash ~/.config/sway/powerctrl.sh"
@@ -45,12 +45,12 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Yaru-Blue-dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'Ubuntu Medium 11'
-    gsettings set $gnome-schema document-font-name 'Ubuntu Regular 11'
-    gsettings set $gnome-schema monospace-font-name 'Source Code Pro 10'
+    gsettings set $gnome-schema document-font-name 'Ubuntu Medium 11'
+    gsettings set $gnome-schema monospace-font-name 'SauceCodePro Nerd Font 10'
 }
 
 # Font config
-font pango: Ubuntu:style=Regular 11
+font pango: Ubuntu Medium:style=Regular 11
 
 # Configure gaps between windows
 gaps inner 10
@@ -78,11 +78,11 @@ exec --no-startup-id mako
 exec_always --no-startup-id autotiling
 
 ### Idle configuration
- exec swayidle -w \
-          timeout 300 'swaylock -f' \
-          timeout 600 'swaymsg "output * dpms off"' \
-          after-resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f'
+exec swayidle -w \
+  	timeout 300 'swaylock -f' \
+  	timeout 600 'swaymsg "output * dpms off"' \
+  		resume 'swaymsg "output * dpms on"' \
+  	before-sleep 'swaylock -f'
 
 ### Input configuration
 
@@ -139,8 +139,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     # Screenshot
     bindsym Print exec grim screenshot.png
 
-    # Start Thunar
-    bindsym Alt+f exec $thunar 
+    # Start Files
+    bindsym Alt+f exec $files 
 
     # Start Playerctl
     bindsym Ctrl+m exec $next
