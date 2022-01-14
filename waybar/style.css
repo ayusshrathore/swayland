@@ -80,17 +80,15 @@ tooltip {
     font-size: 14px;
 }
 
-#memory,
 #pulseaudio,
 #pulseaudio.muted {
 	color: #f48fb1;
 }
 
-#memory.icon {
-    font-size: 15px;
+#memory {
+	color: #FFEE58;
 }
 
-#pulseaudio,
 #pulseaudio.muted {
      font-size: 15px;
 }
