@@ -85,6 +85,10 @@ tooltip {
 	color: #f48fb1;
 }
 
+#pulseaudio.bluetooth{
+	font-size: 16px;
+}
+
 #memory {
 	color: #FFEE58;
 }
