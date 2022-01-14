@@ -23,6 +23,7 @@ set spell
 " Color theme
 packadd! dracula
 syntax enable
+set termguicolors
 colorscheme dracula
 
 " Plugins
