@@ -1,4 +1,4 @@
-image="/home/freaker/Pictures/lock.png"
+image="$HOME/Pictures/lock.png"
 
 ignore-empty-password
 disable-caps-lock-text
