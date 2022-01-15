@@ -1,6 +1,6 @@
 {
     "height": 30,
-    "margin-bottom": 5,
+    "margin-bottom": 3,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery"],
