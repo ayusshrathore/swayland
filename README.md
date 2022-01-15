@@ -1,5 +1,5 @@
 # Swayland
-A clean & minimal swaywm for wayland.
+A clean & minimal build of Sway Window Manager.
 
 ## Required packages
 
