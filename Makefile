@@ -1,2 +1,5 @@
 update:
-	cd update && ./update-config.sh
+	cd scripts && ./update-config.sh
+
+install:
+	cd scripts && ./install-sway.sh
