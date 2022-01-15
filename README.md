@@ -1,4 +1,7 @@
-# Required packages
+# Swayland
+A clean & minimal swaywm for wayland.
+
+## Required packages
 
 -   `sway` - Window Manager for Wayland
 -   `swaylock` - Locker for sway
@@ -15,6 +18,15 @@
 -   `autotiling` - Tiling for Sway
 -   `xdg-user-dirs` - Tool for user directories
 -	`xdg-desktop-portal` - Frontend Portal for D-BUS services
+
+## Installation
+
+```bash
+    git clone https://github.com/ayush-rathore/swayland && cd swayland
+```
+
+`make install` - Install Swayland <br />
+`make update`  - Sync local config files with Swayland
 
 # Screenshots
 
