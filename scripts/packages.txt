@@ -1,0 +1,16 @@
+alacritty
+brightnessctl
+grim
+mako
+playerctl
+papirus-icon-theme
+slurp
+sway
+swayidle
+swaylock
+waybar
+wofi
+xorg-xwayland
+xdg-user-dirs
+xdg-desktop-portal
+xdg-desktop-portal-gtk
