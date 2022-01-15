@@ -1,5 +1,6 @@
 {
     "height": 30,
+    "margin-bottom": 5,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery"],
@@ -8,7 +9,7 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-            "urgent": "",
+            "urgent": "",
             "focused": "",
             "default": ""
          }
@@ -59,7 +60,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": "",
+        "format-bluetooth": " {volume}%",
         "format-bluetooth-muted": "{format_source}",
         "format-muted": "{format_source}",
 	"format-source": "",
