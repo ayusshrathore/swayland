@@ -30,4 +30,7 @@ A clean & minimal swaywm for wayland.
 
 # Screenshots
 
-![Sway_Arch](https://github.com/ayush-rathore/swayland/raw/assets/Sway.png)
+![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
+![2](https://github.com/ayush-rathore/swayland/raw/assets/2.png)
+![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
+
