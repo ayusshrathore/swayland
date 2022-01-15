@@ -23,7 +23,7 @@ window#waybar.hidden {
 #workspaces button {
 	padding: 0 5px;
 	min-width: 20px;
-	color: #f06292;
+	color: #EA80FC;
 }
 
 #workspaces button:hover {
@@ -32,10 +32,11 @@ window#waybar.hidden {
 
 #workspaces button.focused {
 	color: #42a5f5;
+	border-bottom: 2px solid #42a5f5;
 }
 
 #workspaces button.active {
-	color: #f06292;
+	color: #EA80FC;
 }
 
 #workspaces button.urgent {
@@ -44,9 +45,9 @@ window#waybar.hidden {
 
 tooltip {
 	background-color: rgb(45, 45, 45);
-	border: 1px solid;
+	border: 2px solid;
 	border-color: #1e88e5;
-	border-radius: 10px;
+	border-radius: 7px;
 }
 
 #mode {
