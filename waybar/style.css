@@ -1,7 +1,6 @@
 * {
 	border: none;
 	border-radius: 0;
-	/* `otf-font-awesome` is required to be installed for icons */
 	font-family: "JetBrainsMono Nerd Font";
 	font-size: 14px;
 	font-weight: bold;
@@ -22,7 +21,7 @@ window#waybar.hidden {
 
 #workspaces button {
 	padding: 0 5px;
-	background-color: transparent;
+	min-width: 20px;
 	color: #f06292;
 }
 
@@ -43,7 +42,7 @@ window#waybar.hidden {
 }
 
 tooltip {
-	background-color: rgba(45, 45, 45, 0.8);
+	background-color: rgb(45, 45, 45);
 	border: 1px solid;
 	border-color: #1e88e5;
 	border-radius: 10px;
@@ -51,7 +50,11 @@ tooltip {
 
 #mode {
 	background-color: #64727d;
-	border-bottom: 3px solid #ffffff;
+}
+
+#window {
+	padding: 0 10px;
+    margin: 1px 2px;
 }
 
 #battery,
@@ -61,10 +64,15 @@ tooltip {
 #network,
 #pulseaudio,
 #tray,
+#clock,
+#window,
 #mode {
-	padding: 0 4px;
-	margin: 0 4px;
-	color: #ffffff;
+	background-color: #424242;
+ 	padding: 0 10px;
+    margin: 1px 2px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-radius: 90px;
+    background-clip: padding-box;
 }
 
 #network,
@@ -97,32 +105,17 @@ tooltip {
      font-size: 15px;
 }
 
-#clock {
-	color: #64b5f6;
-}
-
-#window {
-	padding-left: 15px;
+#clock { 
+	color: #4FC3F7; 
 }
 
 #workspaces {
 	margin: 0 4px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-	margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-	margin-right: 0;
-}
-
 #battery.charging,
 #battery.plugged {
-	color: #ffffff;
-	/* background-color: #26A65B;*/
+	color: #EA80FC;
 }
 
 @keyframes blink {

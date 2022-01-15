@@ -1,23 +1,24 @@
 {
     "height": 30,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery"],
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{icon}",
-	 "persistent_workspaces": {
-	 		"1": []
-	 },
          "format-icons": {
-             "default": "",
-             "urgent": "",
-             "focused": ""
+            "urgent": "",
+            "focused": "",
+            "default": ""
          }
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 40,
     },
     "tray": {
         "icon-size": 20,
