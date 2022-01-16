@@ -33,9 +33,15 @@ set $files nautilus
 set $power "bash ~/.config/sway/powerctrl.sh"
 
 # Menu
-set $menu exec wofi --show=drun --line=6 --width=300
+set $menu exec wofi --show=drun --line=7 --width=300
+
+# Screenshot
+set $screenshot "$(xdg-user-dir PICTURES)/$(date +'%Y.%m.%d-%H:%m:%S').png"
 
 xwayland enable
+
+# Enables inhibit_idle when playing audio
+exec sway-audio-idle-inhibit
 
 # GTK Settings
 set $gnome-schema org.gnome.desktop.interface
@@ -135,7 +141,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+t exec $telegram
 
     # Screenshot
-    bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'Screenshot_%Y-%m-%d.png')
+    bindsym Print exec grim $screenshot
     bindsym Shift+Print exec grim -g "$(slurp)"
     bindsym Ctrl+Print exec grim - | wl-copy
 
