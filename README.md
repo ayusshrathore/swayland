@@ -30,7 +30,7 @@ A clean & minimal build of Sway Window Manager.
 
 # Screenshots
 
-![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
+![4](https://github.com/ayush-rathore/swayland/raw/assets/4.png)
 ![2](https://github.com/ayush-rathore/swayland/raw/assets/2.png)
 ![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
-
+![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
