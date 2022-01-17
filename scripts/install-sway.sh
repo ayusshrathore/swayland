@@ -19,12 +19,12 @@ cp -frv \
 	../swaylock \
 	../waybar \
 	../wofi \
-	${HOME}/.config/
+	../../.config/
 
 cp -frv \
 	../images/wallpaper.jpg \
 	../images/lock.png \
-	${HOME}/Pictures/
+	../../Pictures/
 
 echo 
 echo "Swayland installed! You can now reboot and use Swayland."
