@@ -1,7 +1,8 @@
 # Swayland
+
 A clean & minimal build of Sway Window Manager.
 
-## Required packages
+## Packages
 
 -   `sway` - Window Manager for Wayland
 -   `swaylock` - Locker for sway
@@ -15,9 +16,7 @@ A clean & minimal build of Sway Window Manager.
 -   `playerctl` - Media Player Daemon
 -   `brightnessctl` - Brightness Daemon
 -   `xorg-xwayland` - X Clients on Wayland
--   `autotiling` - Tiling for Sway
--   `xdg-user-dirs` - Tool for user directories
--	`xdg-desktop-portal` - Frontend Portal for D-BUS services
+-   `autotiling` - Tiling manager for Sway
 
 ## Installation
 
