@@ -35,13 +35,14 @@ set $power "bash ~/.config/sway/powerctrl.sh"
 # Menu
 set $menu exec wofi --show=drun --line=7 --width=300
 
-# Screenshot
-set $screenshot "$(xdg-user-dir PICTURES)/$(date +'%Y.%m.%d-%H:%m:%S').png"
-
 xwayland enable
 
 # Enables inhibit_idle when playing audio
 exec sway-audio-idle-inhibit
+
+# Enable inhibit_idle when app is in fullscreen
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
 
 # GTK Settings
 set $gnome-schema org.gnome.desktop.interface
@@ -70,7 +71,6 @@ smart_gaps on
 # class            border   backgr.   text     indicator  child_border
 # client.focused   #1E88E5  #1E88E5   #f0f0f0  #1E88E5    #1E88E5
 client.focused     #424242  #424242   #f0f0f0  #424242    #424242
-
 
 ### Output configuration
 # Wallpaper
@@ -141,8 +141,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+t exec $telegram
 
     # Screenshot
-    bindsym Print exec grim $screenshot
-    bindsym Shift+Print exec grim -g "$(slurp)"
+    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png
+    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png
     bindsym Ctrl+Print exec grim - | wl-copy
 
     # Start Files
@@ -168,6 +168,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes!' 'swaymsg exit'
+
 #
 # Moving around:
 #
