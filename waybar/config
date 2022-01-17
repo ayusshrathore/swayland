@@ -17,10 +17,6 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/window": {
-        "format": "{}",
-        "max-length": 40,
-    },
     "tray": {
         "icon-size": 20,
         "spacing": 10
@@ -31,10 +27,6 @@
     "memory": {
         "format": " {}%"
     },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", ""]
-    },
     "battery": {
         "states": {
             "good": 95,
@@ -44,14 +36,14 @@
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "format-charging": "{capacity}% ",
-        "format-full": "{capacity}% ",
+        "format-full": "{capacity}% ",
         "format-plugged": "{capacity}% "
     },
     "network": {
         "format-wifi": " ",
         "format-ethernet": " {ifname}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "No Intenet!",
+        "format-disconnected": "No Internet!",
         "format-alt": "{ipaddr}",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} {signalStrength}%",
