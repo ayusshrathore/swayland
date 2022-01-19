@@ -27,7 +27,7 @@ set $code code
 set $telegram telegram-desktop
 
 # Nautilus
-set $files nautilus
+set $files thunar
 
 # Power
 set $power "bash ~/.config/sway/powerctrl.sh"
@@ -147,9 +147,10 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+t exec $telegram
 
     # Screenshot
-    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
-    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
-    bindsym Ctrl+Print exec grim - | wl-copy
+    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"	  
+    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"
+    bindsym Ctrl+Print exec grim - | wl-copy && notify-send "Screenshot copied to Clipboard!"
+    bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied to Clipboard!"
 
     # Start Files
     bindsym $mod+f exec $files 
