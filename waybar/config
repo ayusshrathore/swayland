@@ -9,24 +9,25 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-            "urgent": "",
+            "urgent": "",
             "focused": "",
-            "default": ""
+            "default": ""
          }
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
-        "icon-size": 20,
+        "icon-size": 18,
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %d %b %I:%M %p}"
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%A, %d %b}" 
     },
     "memory": {
-        "format": " {}%"
-    },
+         "format": " {}%"
+     },
     "battery": {
         "states": {
             "good": 95,
@@ -52,10 +53,10 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
+        "format-bluetooth": " {volume}%",
         "format-bluetooth-muted": "{format_source}",
         "format-muted": "{format_source}",
-	"format-source": "",
+		"format-source": "婢",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
