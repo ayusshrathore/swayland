@@ -35,6 +35,7 @@ set $power "bash ~/.config/sway/powerctrl.sh"
 # Menu
 set $menu exec wofi --show=drun --line=7 --width=300
 
+# Enable XWayland support
 xwayland enable
 
 # Enables inhibit_idle when playing audio
@@ -44,11 +45,16 @@ exec sway-audio-idle-inhibit
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
+# Enable floating mode for Alacritty
+for_window [app_id="alacritty"] floating enable
+
+for_window [app_id="mpv"] move container to workspace number 3
+
 # GTK Settings
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Yaru-Blue-dark'
+    gsettings set $gnome-schema gtk-theme 'paradise'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'Ubuntu 11'
     gsettings set $gnome-schema document-font-name 'Ubuntu 11'
@@ -74,7 +80,7 @@ client.focused     #424242  #424242   #f0f0f0  #424242    #424242
 
 ### Output configuration
 # Wallpaper
-output * bg ~/Pictures/wallpaper.jpg fill
+output * bg ~/Downloads/02.jpg fill
 
 # Autostart
 exec --no-startup-id libinput-gestures
@@ -123,7 +129,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 # Basics:
 #
     # Start a terminal
-    bindsym Alt+Return exec $term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym Alt+w kill
@@ -141,12 +147,12 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+t exec $telegram
 
     # Screenshot
-    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png
-    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png
+    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
+    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
     bindsym Ctrl+Print exec grim - | wl-copy
 
     # Start Files
-    bindsym Alt+f exec $files 
+    bindsym $mod+f exec $files 
 
     # Start Playerctl
     bindsym Ctrl+m exec $next
@@ -155,6 +161,10 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
     # Power Menu
     bindsym $mod+p exec $power
+
+	# Move windows to next workspace
+    bindsym $mod+Control+Left move container to workspace prev; workspace prev
+    bindsym $mod+Control+Right move container to workspace next; workspace next   
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -208,16 +218,16 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+1 move container to workspace number 1; workspace 1
+    bindsym $mod+Shift+2 move container to workspace number 2; workspace 2
+    bindsym $mod+Shift+3 move container to workspace number 3; workspace 3
+    bindsym $mod+Shift+4 move container to workspace number 4; workspace 4
+    bindsym $mod+Shift+5 move container to workspace number 5; workspace 5
+    bindsym $mod+Shift+6 move container to workspace number 6; workspace 6
+    bindsym $mod+Shift+7 move container to workspace number 7; workspace 7
+    bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
+    bindsym $mod+Shift+9 move container to workspace number 9; workspace 9
+    bindsym $mod+Shift+0 move container to workspace number 10; workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -235,7 +245,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+Shift+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+space floating toggle
