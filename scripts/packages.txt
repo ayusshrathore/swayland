@@ -11,6 +11,4 @@ swaylock
 waybar
 wofi
 xorg-xwayland
-xdg-user-dirs
-xdg-desktop-portal
 xdg-desktop-portal-gtk
