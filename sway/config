@@ -74,7 +74,7 @@ output * bg ~/Downloads/02.jpg fill
 
 # Autostart
 exec --no-startup-id libinput-gestures
-exec --no-startup-id mako
+exec --no-startup-id dunst
 
 ### Idle configuration
 exec swayidle -w \
