@@ -21,7 +21,7 @@ set $code code
 set $telegram telegram-desktop
 
 # Nautilus
-set $files thunar
+set $files nautilus
 
 # Power
 set $power "bash ~/.config/sway/powerctrl.sh"
@@ -39,11 +39,8 @@ exec sway-audio-idle-inhibit
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
-# Enable floating mode for Alacritty
-for_window [app_id="alacritty"] floating enable
-
 # Move MPV window
-for_window [app_id="mpv"] move container to workspace number 3
+for_window [app_id="mpv"] move container to workspace 3; workspace 3
 
 # GTK Settings
 set $gnome-schema org.gnome.desktop.interface
@@ -64,7 +61,7 @@ gaps inner 10
 
 # Window Borders 
 default_border pixel 3
-default_floating_border normal
+default_floating_border pixel 2
 smart_gaps on
 
 # Window decoration
@@ -157,7 +154,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
 
 	# Move windows to next workspace
     bindsym $mod+Control+Left move container to workspace prev; workspace prev
-    bindsym $mod+Control+Right move container to workspace next; workspace next   
+    bindsym $mod+Control+Right move container to workspace next; workspace next    
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -220,8 +217,6 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
     bindsym $mod+Shift+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+q layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
