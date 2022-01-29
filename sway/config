@@ -110,8 +110,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness controls
-bindsym --locked XF86MonBrightnessUp exec brightnessctl s 5%+ | brightnessctl -m | cut -d ',' -f 4 | tr -d '%' | ~/.config/sway/notify.sh brightness
-bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%- | brightnessctl -m | cut -d ',' -f 4 | tr -d '%' | ~/.config/sway/notify.sh brightness
+bindsym --locked XF86MonBrightnessUp exec light -A 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
+bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
 
 ### Key bindings
 #

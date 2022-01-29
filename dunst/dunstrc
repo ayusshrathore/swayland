@@ -1,50 +1,63 @@
 [global]
-  monitor = 0
-  follow = mouse
-  shrink = no
-  padding = 20
-  horizontal_padding = 20
+	  monitor = 0
+	  follow = mouse
+	  shrink = no
+	  padding = 20
+	  horizontal_padding = 20
 
-  frame_width = 0
-  separator_height = 0
-  frame_color = "#96CDFB"
-  separator_color= "#96CDFB"
-  sort = no
-  font = Ubuntu 11
-  markup = full
-  format = "<b>%s</b>\n%b"
-  alignment = left
-  show_age_threshold = 60
-  word_wrap = yes
-  ignore_newline = no
-  stack_duplicates = true
-  hide_duplicate_count = no
-  show_indicators = no
-  origin=bottom-right
+	  frame_width = 0
+	  separator_height = 0
+	  frame_color = "#96CDFB"
+	  separator_color= "#96CDFB"
+	  sort = no
+	  font = Noto Sans 11
+	  markup = full
+	  format = "<b>%s</b>\n%b"
+	  alignment = left
+	  show_age_threshold = 60
+	  word_wrap = yes
+	  ignore_newline = no
+	  stack_duplicates = true
+	  hide_duplicate_count = no
+	  show_indicators = no
+	  origin=bottom-right
 
-  icon_position = left
-  max_icon_size= 60
-  sticky_history = no
-  history_length = 6
-  title = Dunst
-  class = Dunst
-  corner_radius = 5
+	  icon_path = .config/dunst/
+	  icon_position = left
+	  max_icon_size= 60
+	  sticky_history = no
+	  history_length = 6
+	  title = Dunst
+	  class = Dunst
+	  corner_radius = 5
 
-  mouse_left_click = close_current
-  mouse_middle_click = do_action
-  mouse_right_click = close_all
+	  mouse_left_click = close_current
+	  mouse_middle_click = do_action
+	  mouse_right_click = close_all
+  
+      progress_bar = true  
+      progress_bar_height = 5
+      progress_bar_frame_width = 0  
+      progress_bar_min_width = 150
+      progress_bar_max_width = 300
+      indicate_hidden = yes
+      separator_height = 0
+      padding = 10
+      horizontal_padding = 10
+      text_icon_padding = 0
+      sort = yes
 
 [urgency_low]
-    background = "#2C3E50"
-    foreground = "#EEEEEE"
-    timeout = 5
+	  background = "262626"
+	  foreground = "#EEEEEE"
+	  timeout = 5
 
 [urgency_normal]
-    background = "#2C3E50"
-    foreground = "#EEEEEE"
-    timeout = 5
+      background = "#262626"
+      foreground = "#EEEEEE"
+      timeout = 5
 
 [urgency_critical]
-    background = "#2C3E50"
-    foreground = "#EEEEEE"
-    timeout = 5
+      background = "#262626"
+      foreground = "#EEEEEE"
+      timeout = 5
