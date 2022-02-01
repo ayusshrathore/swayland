@@ -48,13 +48,13 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'paradise'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema font-name 'Inter V 10.5'
-    gsettings set $gnome-schema document-font-name 'Inter V 10.5'
+    gsettings set $gnome-schema font-name 'Inter 10.5'
+    gsettings set $gnome-schema document-font-name 'Inter 10.5'
     gsettings set $gnome-schema monospace-font-name 'JetBrainsMono Nerd Font 10'
 }
 
 # Font config
-font pango: Inter V:style=Regular 11
+font pango: Inter:style=Regular 10.5
 
 # Configure gaps between windows
 gaps inner 10
