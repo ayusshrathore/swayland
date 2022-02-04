@@ -18,7 +18,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%I:%M}",
         "tooltip-format": "{:%A, %d %b}" 
     },
     "memory": {
@@ -40,25 +40,25 @@
         "format-plugged": "{capacity}% "
     },
     "network": {
-        "format-wifi": " ",
-        "format-ethernet": " {ifname}",
+        "format-wifi": "",
+        "format-ethernet": "",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "No Internet!",
+        "format-disconnected": "",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} {signalStrength}%",
         "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "No Internet!",
         
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
+        "format-bluetooth": " {volume}%",
         "format-bluetooth-muted": "{format_source}",
         "format-muted": "{format_source}",
 		"format-source": "婢",
 		"format-source-muted": "婢",
         "format-icons": {
-            "headphone": "",
+            "headphone": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"

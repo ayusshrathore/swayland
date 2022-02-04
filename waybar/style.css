@@ -1,8 +1,8 @@
 * {
 	border: none;
 	border-radius: 0;
-	font-family: "JetBrainsMono Nerd Font";
-	font-size: 14px;
+	font-family: "Inter Nerd Font";
+	font-size: 13px;
 	font-weight: bold; 
 	min-height: 0;
 }
@@ -59,9 +59,9 @@ tooltip {
 	color: #81c784;
 }
 
-#network {
-    font-size: 15px;
-}
+#network { 
+    font-size: 14px; 
+} 
 
 #network.disconnected {
     font-size: 14px;
