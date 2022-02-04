@@ -2,7 +2,6 @@ alacritty
 light
 grim
 dunst
-ponymix
 playerctl
 papirus-icon-theme
 slurp
