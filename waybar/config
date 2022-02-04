@@ -22,7 +22,7 @@
         "tooltip-format": "{:%A, %d %b}" 
     },
     "memory": {
-         "format": " {used:0.1f}G",
+         "format": "﬙ {used:0.1f}G",
          "interval": 1,
          "tooltip": false
      },
@@ -40,14 +40,14 @@
         "format-plugged": "{capacity}% "
     },
     "network": {
-        "format-wifi": "",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "",
+        "format-disconnected": "No Internet!",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} {signalStrength}%",
         "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "No Internet!",
+        "tooltip-format-disconnected": "Disconnected",
         
     },
     "pulseaudio": {

@@ -59,12 +59,12 @@ tooltip {
 	color: #81c784;
 }
 
-#network { 
-    font-size: 14px; 
-} 
+#network {
+	font-size: 14px;
+}
 
 #network.disconnected {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 #pulseaudio,
