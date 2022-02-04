@@ -1,4 +1,4 @@
-### Variables
+########## Variables ##########
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -29,33 +29,36 @@ set $power "bash ~/.config/sway/powerctrl.sh"
 # Menu
 set $menu exec wofi --show=drun --line=7 --width=300
 
-# Enable xwayland support
+#################################
+
+## Enable xwayland support
 xwayland enable
 
-# Enables inhibit_idle when playing audio
+## Enables inhibit_idle when playing audio
 exec sway-audio-idle-inhibit
 
-# Enable inhibit_idle when app is in fullscreen
+## Enable inhibit_idle when app is in fullscreen
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
-# Move MPV window
+## Move MPV window (Always opens MPV in third workspace)
 for_window [app_id="mpv"] move container to workspace 3; workspace 3
 
-# GTK Settings
+### GTK Settings ###
 set $gnome-schema org.gnome.desktop.interface
-
 exec_always {
     gsettings set $gnome-schema gtk-theme 'paradise'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema font-name 'Inter V 10.5'
-    gsettings set $gnome-schema document-font-name 'Inter V 10.5'
+    gsettings set $gnome-schema font-name 'Inter 10.5'
+    gsettings set $gnome-schema document-font-name 'Inter 10.5'
     gsettings set $gnome-schema monospace-font-name 'JetBrainsMono Nerd Font 10'
 }
+####################
 
-# Font config
-font pango: Inter V:style=Regular 11
+## Font config
+font pango: Inter:style=Regular 10.5
 
+### Window COnfig ###
 # Configure gaps between windows
 gaps inner 10
 
@@ -67,23 +70,26 @@ smart_gaps on
 # Window decoration
 # class            border   backgr.   text     indicator  child_border
 client.focused     #424242  #424242   #f0f0f0  #424242    #424242
+######################
+
 
 ### Output configuration
 # Wallpaper
 output * bg ~/Pictures/Wallpapers/01.jpg fill
 
-# Autostart
+## Autostart
 exec --no-startup-id libinput-gestures
 exec --no-startup-id dunst
 
-### Idle configuration
+### Idle configuration ###
 exec swayidle -w \
   	timeout 300 'swaylock -f' \
   	timeout 600 'swaymsg "output * dpms off"' \
   		resume 'swaymsg "output * dpms on"' \
   	before-sleep 'swaylock -f'
+#########################
 
-### Input configuration
+### Input configuration ###
 
 # Touchpad Config
  input "1267:91:Elan_Touchpad" {
@@ -100,8 +106,9 @@ exec swayidle -w \
 	input * {
 		xkb_options caps:swapescape
 	}
+#########################
 	
-# Multimedia
+## Multimedia
 bindsym XF86AudioMute exec pulsemixer --toggle-mute --get-mute | ~/.config/sway/notify.sh muted
 bindsym XF86AudioRaiseVolume exec ponymix increase 5 | ~/.config/sway/notify.sh audio
 bindsym XF86AudioLowerVolume exec ponymix decrease 5 | ~/.config/sway/notify.sh audio
@@ -109,19 +116,17 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Brightness controls
+## Brightness controls
 bindsym --locked XF86MonBrightnessUp exec light -A 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
 bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
 
-### Key bindings
-#
-# Basics:
-#
+### Key bindings ###
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym Alt+w kill
+    bindsym $mod+w kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -145,8 +150,8 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
     bindsym $mod+f exec $files 
 
     # Start Playerctl
-    bindsym Ctrl+m exec $next
-    bindsym Ctrl+n exec $previous
+    bindsym Ctrl+k exec $next
+    bindsym Ctrl+j exec $previous
     bindsym Ctrl+space exec $pause
 
     # Power Menu
@@ -155,6 +160,9 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
 	# Move windows to next workspace
     bindsym $mod+Control+Left move container to workspace prev; workspace prev
     bindsym $mod+Control+Right move container to workspace next; workspace next    
+
+	# Cycle between workspaces
+	bindsym $mod+tab workspace back_and_forth
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -165,10 +173,11 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes!' 'swaymsg exit'
+######################################
 
-#
-# Moving around:
-#
+
+## Moving around:
+
     # Move your focus around
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -180,9 +189,9 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
+
+## Workspaces:
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -207,9 +216,9 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
     bindsym $mod+Shift+0 move container to workspace number 10; workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
+    
+## Layout stuff:
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -230,21 +239,8 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
+## Resizing containers:
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -261,8 +257,8 @@ mode "resize" {
 }
 bindsym Ctrl+Shift+r mode "resize"
 
-#
-# Status Bar:
+
+## Status Bar:
 bar {
     swaybar_command waybar
 }

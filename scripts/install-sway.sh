@@ -12,19 +12,20 @@ echo
 
 pacman -Sy --needed $(<packages.txt)
 
+echo "=======> Copying dotfiles"
+
 cp -frv \
 	../alacritty \
-	../mako \
+	../dunst \
 	../sway \
 	../swaylock \
 	../waybar \
 	../wofi \
-	../../.config/
+	$HOME/.config/
 
 cp -frv \
-	../images/wallpaper.jpg \
-	../images/lock.png \
-	../../Pictures/
+	../wallpapers/* \
+	$HOME/Pictures/Wallpapers/
 
 echo 
 echo "Swayland installed! You can now reboot and use Swayland."
