@@ -1,14 +1,13 @@
 alacritty
-brightnessctl
+light
 grim
-mako
+dunst
+ponymix
 playerctl
 papirus-icon-theme
 slurp
 sway
 swayidle
-swaylock
 waybar
 wofi
 xorg-xwayland
-xdg-desktop-portal-gtk
