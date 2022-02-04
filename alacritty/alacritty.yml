@@ -53,8 +53,8 @@ font:
 colors:
     # Default colors
     primary:
-        background: "#171717"
-        foreground: "#ffffff"
+        background: '#151515'
+        foreground: '#E8E3E3'
 
     # Normal colors
     normal:
