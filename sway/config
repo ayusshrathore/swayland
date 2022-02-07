@@ -150,8 +150,8 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
     bindsym $mod+f exec $files 
 
     # Start Playerctl
-    bindsym Ctrl+k exec $next
-    bindsym Ctrl+j exec $previous
+    bindsym Ctrl+m exec $next
+    bindsym Ctrl+n exec $previous
     bindsym Ctrl+space exec $pause
 
     # Power Menu
