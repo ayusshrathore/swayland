@@ -50,11 +50,16 @@ tooltip {
 #pulseaudio,
 #tray,
 #window {
- 	padding: 0 7px;
+ 	padding: 0 5px;
     margin: 1px 1px;
 }
 
 #battery,
+#battery.charging,
+#battery.plugged {
+	color: #CE93D8;
+}
+
 #network {
 	color: #81c784;
 }
@@ -63,9 +68,6 @@ tooltip {
 	font-size: 14px;
 }
 
-#network.disconnected {
-    font-size: 13px;
-}
 
 #pulseaudio,
 #pulseaudio.muted {
@@ -76,9 +78,9 @@ tooltip {
 	color: #FFEE58;
 }
 
-#pulseaudio.muted {
-     font-size: 16px;
-}
+#pulseaudio.muted { 
+     font-size: 16px; 
+} 
 
 #clock { 
 	color: #4FC3F7; 
@@ -86,11 +88,6 @@ tooltip {
 
 #workspaces {
 	margin: 0 4px;
-}
-
-#battery.charging,
-#battery.plugged {
-	color: #81c784;
 }
 
 @keyframes blink {
