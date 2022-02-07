@@ -31,6 +31,9 @@ set $menu exec wofi --show=drun --line=7 --width=300
 
 #################################
 
+## Autotiling
+exec autotiling
+
 ## Enable xwayland support
 xwayland enable
 
@@ -68,8 +71,10 @@ default_floating_border none
 smart_gaps on
 
 # Window decoration
-# class            border   backgr.   text     indicator  child_border
-client.focused     #424242  #424242   #f0f0f0  #424242    #424242
+# class            		  border   backgr.   text     indicator  child_border
+client.focused     		  #616161  #616161   #f0f0f0  #616161    #616161
+client.unfocused   		  #212121  #212121   #f0f0f0  #212121    #212121
+client.focused_inactive   #212121  #212121   #f0f0f0  #212121    #212121
 ######################
 
 
