@@ -1,21 +1,21 @@
 # Swayland
 
-A clean & minimal build of Sway Window Manager.
+A clean & minimal build of Sway.
 
-## Packages
+## Dependencies
 
--   `sway` - Window Manager for Wayland
--   `swaylock` - Locker for sway
--   `swayidle` - Idle manager for sway
--   `waybar` - Status Bar for Wayland
--   `wofi` - Menu & Launcher
--   `alacritty` - Terminal Emulator
--   `grim` - Screenshot Utility
--	`slurp` - Screenshot window selection tool
--   `dunst` - Notification Daemon
--   `playerctl` - Media Player Daemon
--   `brightnessctl` - Brightness Daemon
--   `xorg-xwayland` - X Clients on Wayland
+-   [Sway](https://github.com/swaywm/sway) - Window Manager for Wayland
+-   [Swaylock-Effects](https://github.com/mortie/swaylock-effects) - Lock Screen Manager for Sway
+-   [Waybar](https://github.com/Alexays/Waybar) - Status Bar for Wayland
+-   [Wofi](https://github.com/tsujp/wofi) - Menu & Launcher
+-   [Alacritty](https://github.com/alacritty/alacritty) - Terminal Emulator
+-   [Grim](https://github.com/emersion/grim) - Screenshot Utility
+-	[Slurp](https://github.com/emersion/slurp) - Screenshot window selection tool
+-   [Dunst](https://github.com/dunst-project/dunst) - Notification Daemon
+-   [Playerctl](https://github.com/altdesktop/playerctl) - Media Player Controller
+-   [Light](https://github.com/haikarainen/light) - Brightness Controller 
+-   [XWayland](https://wayland.freedesktop.org/xserver.html) - X Clients under Wayland
+-	[Autotiling](https://github.com/ammgws/autotiling-rs) - Autotiling for Sway
 
 ## Installation
 
@@ -28,7 +28,7 @@ git clone https://github.com/ayush-rathore/swayland && cd swayland
 `make install` - Install Swayland <br />
 `make update`  - Sync local config files with Swayland
 
-# Screenshots
+## Screenshots
 
 ![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
 ![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
