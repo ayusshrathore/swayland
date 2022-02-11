@@ -32,7 +32,7 @@ set $menu exec wofi --show=drun --line=7 --width=300
 #################################
 
 ## Autotiling
-exec autotiling
+exec autotiling-rs
 
 ## Enable xwayland support
 xwayland enable
@@ -155,8 +155,8 @@ bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1
     bindsym $mod+f exec $files 
 
     # Start Playerctl
-    bindsym Ctrl+m exec $next
-    bindsym Ctrl+n exec $previous
+    bindsym Ctrl+period exec $next
+    bindsym Ctrl+comma exec $previous
     bindsym Ctrl+space exec $pause
 
     # Power Menu
