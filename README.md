@@ -33,3 +33,7 @@ git clone https://github.com/ayush-rathore/swayland && cd swayland
 ![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
 ![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
 ![2](https://github.com/ayush-rathore/swayland/raw/assets/2.png)
+
+## Credits
+
+Credits to [Aarav](https://github.com/Aarav619) for finding python alternatives.
