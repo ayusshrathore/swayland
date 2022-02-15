@@ -16,7 +16,7 @@ window#waybar {
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+	opacity: 0;
 }
 
 #workspaces button {
@@ -34,7 +34,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-	background-color: #eb4d4b;
+	color: #eb4d4b;
 }
 
 tooltip { 
