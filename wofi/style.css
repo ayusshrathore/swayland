@@ -1,6 +1,6 @@
 window {
 	margin: 5px;
-	background-color: rgb(45, 45, 45);
+	background-color: #151515;
 	color: #fff;
 	border-radius: 10px;
 }
@@ -26,10 +26,6 @@ window {
 }
 
 #outer-box {
-	margin: 5px;
-}
-
-#scroll {
 	margin: 5px;
 }
 
