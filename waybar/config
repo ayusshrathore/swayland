@@ -8,7 +8,7 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-            "urgent": "",
+            "urgent": "",
             "focused": "",
             "default": ""
          }
@@ -19,10 +19,10 @@
     },
     "clock": {
         "format": "{:%I:%M}",
-        "tooltip-format": "{:%A, %d %b}" 
+        "tooltip-format": "{:%a, %d %b}" 
     },
     "memory": {
-         "format": "﬙ {used:0.1f}G",
+         "format": "﬙ {used:0.1f}GB",
          "interval": 1,
          "tooltip": false
      },
@@ -61,7 +61,7 @@
             "headphone": "",
             "default": ["", "", ""]
         },
+        "tooltip": false,
         "on-click": "pavucontrol"
     }
 }
-

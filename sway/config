@@ -1,35 +1,45 @@
-########## Variables ##########
+################################# Variables ##############################
 
-# Logo key. Use Mod1 for Alt.
+## Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-# Player
+## Player
 set $next playerctl next
 set $previous playerctl previous
 set $pause playerctl play-pause
 
-# Terminal 
+## Terminal 
 set $term alacritty
 
-# Browser
+## Browser
 set $browser google-chrome-stable
 
-# VS Code
+## VS Code
 set $code code
 
-# Telegram
+## Telegram
 set $telegram telegram-desktop
 
-# Nautilus
+## Nautilus
 set $files nautilus
 
-# Power
-set $power "bash ~/.config/sway/powerctrl.sh"
+## Power
+set $power "bash ~/.config/sway/scripts/powerctrl.sh"
 
-# Menu
+## Menu
 set $menu exec wofi --show=drun --line=7 --width=300
 
-#################################
+## Connect
+set $connect alacritty -e nmtui-connect
+
+## Workspaces
+set $next-workspace-move ~/.config/sway/scripts/next-workspace-move-container
+set $prev-workspace-move ~/.config/sway/scripts/prev-workspace-move-container
+set $next-workspace ~/.config/sway/scripts/next-workspace
+set $prev-workspace ~/.config/sway/scripts/prev-workspace
+
+
+################################## Autostart ###############################
 
 ## Autotiling
 exec autotiling-rs
@@ -40,14 +50,7 @@ xwayland enable
 ## Enables inhibit_idle when playing audio
 exec sway-audio-idle-inhibit
 
-## Enable inhibit_idle when app is in fullscreen
-for_window [class=".*"] inhibit_idle fullscreen
-for_window [app_id=".*"] inhibit_idle fullscreen
-
-## Move MPV window (Always opens MPV in third workspace)
-for_window [app_id="mpv"] move container to workspace 3; workspace 3
-
-### GTK Settings ###
+## GTK Settings
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'paradise'
@@ -56,212 +59,194 @@ exec_always {
     gsettings set $gnome-schema document-font-name 'Inter 10.5'
     gsettings set $gnome-schema monospace-font-name 'JetBrainsMono Nerd Font 10'
 }
-####################
 
-## Font config
-font pango: Inter:style=Regular 10.5
-
-### Window COnfig ###
-# Configure gaps between windows
-gaps inner 10
-
-# Window Borders 
-default_border pixel 3
-default_floating_border none
-smart_gaps on
-
-# Window decoration
-# class            		  border   backgr.   text     indicator  child_border
-client.focused     		  #616161  #616161   #f0f0f0  #616161    #616161
-client.unfocused   		  #212121  #212121   #f0f0f0  #212121    #212121
-client.focused_inactive   #212121  #212121   #f0f0f0  #212121    #212121
-######################
-
-
-### Output configuration
-# Wallpaper
-output * bg ~/Pictures/Wallpapers/01.jpg fill
-
-## Autostart
-exec --no-startup-id libinput-gestures
+## Dunst
 exec --no-startup-id dunst
 
-### Idle configuration ###
+## Idle configuration
 exec swayidle -w \
   	timeout 300 'swaylock -f' \
   	timeout 600 'swaymsg "output * dpms off"' \
   		resume 'swaymsg "output * dpms on"' \
   	before-sleep 'swaylock -f'
-#########################
+  	
 
-### Input configuration ###
+################################## Rules ####################################
 
-# Touchpad Config
+## Enable inhibit_idle when app is in fullscreen
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
+
+## Move MPV window
+for_window [app_id="mpv"] exec $next-workspace-move
+
+
+############################### Window ###################################     
+
+## Configure gaps between windows
+gaps inner 10
+
+## Window Borders 
+default_border pixel 3
+default_floating_border none
+smart_gaps on
+
+## Window decoration
+## class            	  border   backgr.   text     indicator  child_border
+client.focused     		  #616161  #616161   #f0f0f0  #616161    #616161
+client.unfocused   		  #212121  #212121   #f0f0f0  #212121    #212121
+client.focused_inactive   #212121  #212121   #f0f0f0  #212121    #212121
+
+## Wallpaper
+output * bg ~/Pictures/Wallpapers/01.jpg fill
+
+
+##################################### Config ###########################
+
+## Font config
+font pango: Inter:style=Regular 10.5
+
+## Touchpad Config
  input "1267:91:Elan_Touchpad" {
 	natural_scroll enabled
 	tap enabled
   }
   
-# Keyboard Config 
+## Keyboard Config 
   input "1:1:AT_Translated_Set_2_keyboard" {
   	xkb_numlock enabled
   }
   
-# Swap caps & escape key
+## Swap caps & escape key
 	input * {
 		xkb_options caps:swapescape
 	}
-#########################
+
+
+################################### Keybindings ##########################
 	
 ## Multimedia
-bindsym XF86AudioMute exec pulsemixer --toggle-mute --get-mute | ~/.config/sway/notify.sh muted
-bindsym XF86AudioRaiseVolume exec ponymix increase 5 | ~/.config/sway/notify.sh audio
-bindsym XF86AudioLowerVolume exec ponymix decrease 5 | ~/.config/sway/notify.sh audio
+bindsym XF86AudioMute exec pulsemixer --toggle-mute --get-mute | ~/.config/sway/scripts/notify.sh muted
+bindsym XF86AudioRaiseVolume exec ponymix increase 5 | ~/.config/sway/scripts/notify.sh audio
+bindsym XF86AudioLowerVolume exec ponymix decrease 5 | ~/.config/sway/scripts/notify.sh audio
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 ## Brightness controls
-bindsym --locked XF86MonBrightnessUp exec light -A 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
-bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1 | ~/.config/sway/notify.sh brightness
+bindsym --locked XF86MonBrightnessUp exec light -A 5 | light | cut -d '.' -f 1 | ~/.config/sway/scripts/notify.sh brightness
+bindsym --locked XF86MonBrightnessDown exec light -U 5 | light | cut -d '.' -f 1 | ~/.config/sway/scripts/notify.sh brightness
 
-### Key bindings ###
+## Start a terminal
+bindsym $mod+Return exec $term
 
-    # Start a terminal
-    bindsym $mod+Return exec $term
+## Kill focused window
+bindsym $mod+w kill
 
-    # Kill focused window
-    bindsym $mod+w kill
+## Start your launcher
+bindsym $mod+d exec $menu
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+## Start browser
+bindsym $mod+c exec $browser
 
-    # Start browser
-    bindsym $mod+c exec $browser
+## Start VS Code
+bindsym $mod+v exec $code
 
-    # Start VS Code
-    bindsym $mod+v exec $code
+## Start Telegram
+bindsym $mod+t exec $telegram
 
-    # Start Telegram
-    bindsym $mod+t exec $telegram
+## Screenshot
+bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"	  
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"
+bindsym Ctrl+Print exec grim - | wl-copy && notify-send "Screenshot copied to Clipboard!"
+bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied to Clipboard!"
 
-    # Screenshot
-    bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"	  
-    bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot captured!"
-    bindsym Ctrl+Print exec grim - | wl-copy && notify-send "Screenshot copied to Clipboard!"
-    bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied to Clipboard!"
+## Start Files
+bindsym $mod+f exec $files 
 
-    # Start Files
-    bindsym $mod+f exec $files 
+## Start Playerctl
+bindsym Ctrl+period exec $next
+bindsym Ctrl+comma exec $previous
+bindsym Ctrl+space exec $pause
 
-    # Start Playerctl
-    bindsym Ctrl+period exec $next
-    bindsym Ctrl+comma exec $previous
-    bindsym Ctrl+space exec $pause
+## Power Menu
+bindsym $mod+p exec $power
 
-    # Power Menu
-    bindsym $mod+p exec $power
+## NM TUI Connect
+bindsym $mod+n exec $connect
 
-	# Move windows to next workspace
-    bindsym $mod+Control+Left move container to workspace prev; workspace prev
-    bindsym $mod+Control+Right move container to workspace next; workspace next    
+## Move windows to next workspace
+bindsym $mod+Ctrl+right exec $next-workspace-move 
+bindsym $mod+Ctrl+left exec $prev-workspace-move
+bindsym Ctrl+right exec $next-workspace
+bindsym Ctrl+left exec $prev-workspace
 
-	# Cycle between workspaces
-	bindsym $mod+tab workspace back_and_forth
+## Cycle between workspaces
+bindsym $mod+tab workspace back_and_forth
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    floating_modifier $mod normal
+## Drag floating windows by holding down $mod and left mouse button.
+floating_modifier $mod normal
 
-    # Reload the configuration file
-    bindsym $mod+Shift+r reload
+## Reload the configuration file
+bindsym $mod+Shift+r reload
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes!' 'swaymsg exit'
-######################################
+## Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes!' 'swaymsg exit'
 
+## Move your focus around
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
-## Moving around:
+## Move the focused window with the same, but add Shift
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-    # Move your focus around
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+## Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+## Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace number 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace number 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace number 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace number 5; workspace 5
 
-## Workspaces:
+## Split windows horizontally & vertically
+bindsym $mod+Shift+b splith
+bindsym $mod+Shift+v splitv
 
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1; workspace 1
-    bindsym $mod+Shift+2 move container to workspace number 2; workspace 2
-    bindsym $mod+Shift+3 move container to workspace number 3; workspace 3
-    bindsym $mod+Shift+4 move container to workspace number 4; workspace 4
-    bindsym $mod+Shift+5 move container to workspace number 5; workspace 5
-    bindsym $mod+Shift+6 move container to workspace number 6; workspace 6
-    bindsym $mod+Shift+7 move container to workspace number 7; workspace 7
-    bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
-    bindsym $mod+Shift+9 move container to workspace number 9; workspace 9
-    bindsym $mod+Shift+0 move container to workspace number 10; workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-    
-## Layout stuff:
+## Make the current focus fullscreen
+bindsym $mod+Shift+f fullscreen
 
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+Shift+b splith
-    bindsym $mod+Shift+v splitv
+## Toggle the current focus between tiling and floating mode
+bindsym $mod+space floating toggle
 
-    # Switch the current container between different layout styles
-    bindsym $mod+e layout toggle split
+## Swap focus between the tiling area and the floating area
+bindsym $mod+Shift+space focus mode_toggle
 
-    # Make the current focus fullscreen
-    bindsym $mod+Shift+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+Shift+space focus mode_toggle
-
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
+## Move focus to the parent container
+bindsym $mod+a focus parent
 
 ## Resizing containers:
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # Return to default mode
+    ## Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym Ctrl+Shift+r mode "resize"
-
 
 ## Status Bar:
 bar {
