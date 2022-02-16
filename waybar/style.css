@@ -7,16 +7,8 @@
 	min-height: 0;
 }
 
-window#waybar {
+window#waybar { 
 	background-color: transparent;
-	color: #ffffff;
-	padding: 5px 1px;
-	transition-property: background-color;
-	transition-duration: 0.5s;
-}
-
-window#waybar.hidden {
-	opacity: 0;
 }
 
 #workspaces button {
@@ -26,7 +18,7 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.focused {
@@ -40,7 +32,7 @@ window#waybar.hidden {
 tooltip { 
 	background-color: #2C2C2C;
 	border-radius: 5px;
-} 
+}
 
 #battery,
 #memory,
@@ -62,12 +54,8 @@ tooltip {
 
 #network {
 	color: #86EFAC;
+	font-size: 14px
 }
-
-#network {
-	font-size: 14px;
-}
-
 
 #pulseaudio,
 #pulseaudio.muted {
@@ -105,17 +93,4 @@ tooltip {
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-}
-
-label:focus {
-	background-color: #000000;
-}
-
-#tray > .passive {
-	-gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-	-gtk-icon-effect: highlight;
-	background-color: #eb4d4b;
 }
