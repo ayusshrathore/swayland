@@ -10,7 +10,8 @@
          "format-icons": {
             "urgent": "",
             "focused": "",
-            "default": ""
+            // "default": ""
+            "default": ""
          }
      },
     "tray": {
