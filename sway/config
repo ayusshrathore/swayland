@@ -80,6 +80,8 @@ for_window [app_id=".*"] inhibit_idle fullscreen
 ## Move MPV window
 for_window [app_id="mpv"] exec $next-workspace-move
 
+## Move VS Code to 3rd workspace
+for_window [class="Code"] move container to workspace number 3; workspace 3
 
 ############################### Window ###################################     
 
