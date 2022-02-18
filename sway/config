@@ -29,15 +29,15 @@ set $power "bash ~/.config/sway/scripts/powerctrl.sh"
 ## Menu
 set $menu exec wofi --show=drun --line=7 --width=300
 
-## Connect
+## Network Connect
 set $connect alacritty -e nmtui-connect
+
+## Bluetooth Connect
+set $bt alacritty -e ~/.config/sway/scripts/btconnect.sh
 
 ## Workspaces
 set $next-workspace-move ~/.config/sway/scripts/next-workspace-move-container
 set $prev-workspace-move ~/.config/sway/scripts/prev-workspace-move-container
-set $next-workspace ~/.config/sway/scripts/next-workspace
-set $prev-workspace ~/.config/sway/scripts/prev-workspace
-
 
 ################################## Autostart ###############################
 
@@ -177,11 +177,13 @@ bindsym $mod+p exec $power
 ## NM TUI Connect
 bindsym $mod+n exec $connect
 
+## BT Connect
+bindsym $mod+b exec $bt
+
 ## Move windows to next workspace
 bindsym $mod+Ctrl+right exec $next-workspace-move 
 bindsym $mod+Ctrl+left exec $prev-workspace-move
-bindsym Ctrl+right exec $next-workspace
-bindsym Ctrl+left exec $prev-workspace
+bindsym Alt+tab workspace next_on_output
 
 ## Cycle between workspaces
 bindsym $mod+tab workspace back_and_forth
