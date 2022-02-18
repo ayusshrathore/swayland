@@ -18,20 +18,20 @@ window#waybar {
 	color: #D946EF;
 }
 
-#workspaces button:hover {
-	background: rgba(0, 0, 0, 0);
-}
-
 #workspaces button.focused {
 	color: #42a5f5;
 }
 
 #workspaces button.urgent {
-	color: #eb4d4b;
+	color: #EF4444;
+}
+
+#workspaces button:hover {
+	background: rgba(0, 0, 0, 0);
 }
 
 tooltip { 
-	background-color: #2C2C2C;
+	background-color: #262626;
 	border-radius: 5px;
 }
 
@@ -55,7 +55,7 @@ tooltip {
 
 #network {
 	color: #86EFAC;
-	font-size: 14px
+	font-size: 13.5px;
 }
 
 #pulseaudio,
