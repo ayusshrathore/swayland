@@ -9,9 +9,8 @@
          "format": "{icon}",
          "format-icons": {
             "urgent": "",
+            "default": "",
             "focused": "",
-            // "default": ""
-            "default": ""
          }
      },
     "tray": {
