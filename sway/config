@@ -180,9 +180,15 @@ bindsym $mod+n exec $connect
 ## BT Connect
 bindsym $mod+b exec $bt
 
-## Move windows to next workspace
+## Move windows to next/prev workspaces
 bindsym $mod+Ctrl+right exec $next-workspace-move 
 bindsym $mod+Ctrl+left exec $prev-workspace-move
+
+## Switch next/prev workspaces
+bindsym Ctrl+right workspace next_on_output
+bindsym Ctrl+left workspace prev_on_output
+
+## Cycle through workspaces
 bindsym Alt+tab workspace next_on_output
 
 ## Cycle between workspaces
