@@ -30,9 +30,9 @@ git clone https://github.com/ayush-rathore/swayland && cd swayland
 
 ## Screenshots
 
-![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
 ![1](https://github.com/ayush-rathore/swayland/raw/assets/1.png)
 ![2](https://github.com/ayush-rathore/swayland/raw/assets/2.png)
+![3](https://github.com/ayush-rathore/swayland/raw/assets/3.png)
 
 ## Credits
 
