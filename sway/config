@@ -85,9 +85,6 @@ for_window [class="Code"] move container to workspace number 3; workspace 3
 
 ############################### Window ###################################     
 
-## Configure gaps between windows
-gaps inner 10
-
 ## Window Borders 
 default_border pixel 3
 default_floating_border none
