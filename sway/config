@@ -85,14 +85,18 @@ for_window [class="Code"] move container to workspace number 3; workspace 3
 
 ############################### Window ###################################     
 
+## Configure gaps between windows
+gaps inner 5
+
 ## Window Borders 
 default_border pixel 3
 default_floating_border none
 smart_gaps on
+# smart_borders on
 
 ## Window decoration
 ## class            	  border   backgr.   text     indicator  child_border
-client.focused     		  #616161  #616161   #f0f0f0  #616161    #616161
+client.focused     		  #404040  #404040   #f0f0f0  #404040    #404040
 client.unfocused   		  #212121  #212121   #f0f0f0  #212121    #212121
 client.focused_inactive   #212121  #212121   #f0f0f0  #212121    #212121
 
