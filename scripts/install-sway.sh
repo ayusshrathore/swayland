@@ -24,8 +24,8 @@ cp -frv \
 	$HOME/.config/
 
 cp -frv \
-	../wallpapers/* \
-	$HOME/Pictures/Wallpapers/
+	../Wallpapers \
+	$HOME/Pictures/
 
 echo 
 echo "Swayland installed! You can now reboot and use Swayland."
