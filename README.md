@@ -5,7 +5,6 @@ A clean & minimal build of Sway.
 ## Dependencies
 
 -   [Sway](https://github.com/swaywm/sway) - Window Manager for Wayland
--   [Swaylock-Effects](https://github.com/mortie/swaylock-effects) - Lock Screen Manager for Sway
 -   [Waybar](https://github.com/Alexays/Waybar) - Status Bar for Wayland
 -   [Wofi](https://github.com/tsujp/wofi) - Menu & Launcher
 -   [Alacritty](https://github.com/alacritty/alacritty) - Terminal Emulator
