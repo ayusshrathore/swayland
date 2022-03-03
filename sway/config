@@ -101,7 +101,7 @@ client.unfocused   		  #212121  #212121   #f0f0f0  #212121    #212121
 client.focused_inactive   #212121  #212121   #f0f0f0  #212121    #212121
 
 ## Wallpaper
-output * bg ~/Pictures/Wallpapers/01.jpg fill
+output * bg ~/Pictures/Wallpapers/05.png fill
 
 
 ##################################### Config ###########################
