@@ -59,7 +59,7 @@ colors:
     # Normal colors
     normal:
         black: "#1d1f21"
-        red: "#ff2740"
+        red: "#EF4444"
         green: "#2ecc71"
         yellow: "#f1c40f"
         blue: "#039be5"
@@ -70,7 +70,7 @@ colors:
     # Bright colors
     bright:
         black: "#666666"
-        red: "#ff2740"
+        red: "#EF4444"
         green: "#2ecc71"
         yellow: "#f1c40f"
         blue: "#039be5"

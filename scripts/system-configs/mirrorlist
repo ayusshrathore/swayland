@@ -1,0 +1,19 @@
+## India
+Server = https://archmirror.akhl.in/$repo/os/$arch
+Server = http://mirror.cse.iitk.ac.in/archlinux/$repo/os/$arch
+Server = http://mirrors.piconets.webwerks.in/archlinux-mirror/$repo/os/$arch
+Server = https://mirrors.piconets.webwerks.in/archlinux-mirror/$repo/os/$arch
+
+## United States
+Server = https://mirror.wdc1.us.leaseweb.net/archlinux/$repo/os/$arch
+Server = http://mirror.hackingand.coffee/arch/$repo/os/$arch
+Server = https://mirrors.xtom.com/archlinux/$repo/os/$arch
+Server = http://mirrors.advancedhosters.com/archlinux/$repo/os/$arch
+Server = http://ftp.osuosl.org/pub/archlinux/$repo/os/$arch
+
+## Netherlands
+Server = http://ftp.snt.utwente.nl/pub/os/linux/archlinux/$repo/os/$arch
+Server = https://mirror.mijn.host/archlinux/$repo/os/$arch
+Server = https://archlinux.mirror.pcextreme.nl/$repo/os/$arch
+Server = https://mirror.cj2.nl/archlinux/$repo/os/$arch
+Server = https://archlinux.mirror.liteserver.nl/$repo/os/$arch
