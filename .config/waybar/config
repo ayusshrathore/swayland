@@ -1,9 +1,13 @@
 {
     "height": 30,
-    "modules-left": ["sway/workspaces"],
+
+    // Modules
+    "modules-left": ["sway/workspaces", "custom/media", "custom/spotify"],
     "modules-center": ["clock"],
     "modules-right": [ "tray", "network", "memory", "pulseaudio", "battery"],
-     "sway/workspaces": {
+
+    // Workspaces
+    "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{icon}",
@@ -13,19 +17,27 @@
             "focused": "",
          }
      },
+
+     // Tray
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
+
+    // Clock
     "clock": {
         "format": "{:%I:%M}",
-        "tooltip-format": "{:%a, %d %b}" 
+        "tooltip-format": "{:%a, %d %B}" 
     },
+
+    // Memory
     "memory": {
-         "format": "﬙ {used:0.1f}GB",
+         "format": "﬙{used: 0.1f}GB",
          "interval": 1,
          "tooltip": false
      },
+
+     // Battery
     "battery": {
         "states": {
             "good": 95,
@@ -35,12 +47,14 @@
         "interval": 1,
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% ",
-        "format-full": "{capacity}% ",
-        "format-plugged": "{capacity}% "
+        "format-charging": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-plugged": "{icon} {capacity}%"
     },
+
+    // Network
     "network": {
-        "format-wifi": "",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "No Internet!",
@@ -48,20 +62,46 @@
         "tooltip-format-wifi": "{essid} {signalStrength}%",
         "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        
     },
+
+    // Pulseaudio
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-bluetooth-muted": "{format_source}",
-        "format-muted": "{format_source}",
-		"format-source": "婢",
-		"format-source-muted": "婢",
+        "format": "<span font='11'>{icon}</span> {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": "<span font='11'>{format_source}</span>",
+        "format-muted": "<span font='11'>{format_source}</span>",
+		"format-source": "",
+		"format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "default": ["", "", ""]
         },
-        "tooltip": false,
+        "tooltip": true,
         "on-click": "pavucontrol"
-    }
+    },
+
+    // Custom Module for playback
+    "custom/media": {
+        	          "format": "{icon}{}",
+        	          "format-icons": {
+        	            "Paused": "",
+        	            "Playing": ""
+        	          },
+        	          "return-type": "json",
+        	          "max-length":30,
+        	          "on-click": "playerctl play-pause",
+        	          "exec": "playerctl --ignore-player=spotify metadata --format '{\"text\": \" {{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
+          	      },
+          	  
+    "custom/spotify": {
+                    "format": "{icon}{}",
+                    "format-icons": {
+                      "Paused": "<span font='11'> </span>",
+                      "Playing": "<span font='11'> </span>"
+                     },
+                    "return-type": "json",
+                    "max-length":30,
+                    "on-click": "playerctl play-pause",
+                    "exec": "playerctl --player=spotify metadata --format '{\"text\": \" {{artist}} | {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
+                }     	  
 }

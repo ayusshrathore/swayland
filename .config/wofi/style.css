@@ -1,34 +1,42 @@
 window {
-	margin: 5px;
 	background-color: #151515;
 	color: #fff;
 	border-radius: 10px;
+	font-family: "Inter Medium";
 }
 
 #input {
 	margin: 5px;
+	border: none; 
 	background: none;
-	border: none;
-	color: #fff;
+	font-size: 16px;
 }
 
 #entry:selected {
 	border-radius: 5px;
 	border: none;
-}
-
-#text:selected {
-	color: #fff;
+	background-color: #5BB462;
 }
 
 #inner-box {
-	margin: 5px;
+	margin: 10px;
 }
 
 #outer-box {
-	margin: 5px;
+	margin: 20px;
 }
 
 #text {
-	margin: 5px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+#text:selected {
+	color: #212121;
+}
+
+#img {
+	margin-left: 20px;
 }

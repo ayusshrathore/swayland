@@ -92,31 +92,31 @@ hst() {
 
 # btw, i use arch
 if [ -f "/etc/arch-release" ]; then
-# pacls [pacman list]: list all installed packages
+# pacls [pacman list]: list all installed packages & remove any package
 pacls() {
     var="$(pacman -Qq | fzf --height "100%" --multi --preview "pacman -Qi {1}" --preview-window "right:70%" --prompt "pkg ")"
-    [ -n "$var" ] && echo "$var" | clipbd
+    [ -n "$var" ] && sudo pacman -Rns $var
     devar; return 0
 }
 
 # pacfd [pacman find]: find a package
 pacfd() {
     var="$(pacman -Slq | fzf --height "100%" --multi --preview "pacman -Si {1}" --preview-window "right:70%" --prompt "pkg ")"
-    [ -n "$var" ] && echo "$var" | clipbd
+    [ -n "$var" ] && sudo pacman -S $var
     devar; return 0
 }
 
-# yayls [yay list]: list all installed AUR packages
+# yayls [yay list]: list all installed AUR packages & remove any package
 yayls() {
     var="$(yay -Qmq | fzf --height "100%" --multi --preview "yay -Qi {1}" --preview-window "right:70%" --prompt "pkg ")"
-    [ -n "$var" ] && echo "$var" | clipbd
+    [ -n "$var" ] && sudo pacman -Rns $var
     devar; return 0
 }
 
 # yayfd [yay find]: find an AUR package
 yayfd() {
     var="$(yay -Slaq | fzf --height "100%" --multi --preview "yay -Si {1}" --preview-window "right:70%" --prompt "pkg ")"
-    [ -n "$var" ] && echo "$var" | clipbd
+    [ -n "$var" ] && yay -S $var
     devar; return 0
 }
 fi

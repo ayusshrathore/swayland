@@ -1,6 +1,6 @@
 # Exporting variables
 export TERMINAL=alacritty
-export BROWSER=google-chrome-stable
+export BROWSER=firefox
 export EDITOR=micro
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -12,6 +12,15 @@ export ANDROID_SDK_HOME="$HOME/.config/android"
 export GOPATH="$HOME/.local/share/go"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export CARGO_HOME="$HOME/.local/share/cargo"
+
+export MOZ_ENABLE_WAYLAND=1
+
+# For Android Studio
+export _JAVA_AWT_WM_NONREPARENTING=1
+export STUDIO_JDK=/usr/lib/jvm/java-11-openjdk
+
+# For Gradle
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 
 # zsh config dir
 export ZDOTDIR="$HOME/.config/zsh"

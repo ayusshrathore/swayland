@@ -1,8 +1,8 @@
 {
     "autosu": true,
-    "colorscheme": "atom-dark",
+    "colorscheme": "twilight",
     "diffgutter": true,
-    "ignorecase": false,
+    "hlsearch": true,
     "initlua": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"

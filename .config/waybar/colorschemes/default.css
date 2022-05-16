@@ -1,0 +1,19 @@
+/* Normal Colors */
+@define-color base00 #212121; /* Black */
+@define-color base01 #EF4444; /* Red */
+@define-color base02 #86EFAC; /* Green */
+@define-color base03 #FFEE58; /* Yellow */
+@define-color base04 #4FC3F7; /* Blue */
+@define-color base05 #E879F9; /* Magenta */ 
+@define-color base06 #039be5; /* Cyan */
+@define-color base07 #F0F0F0; /* White */
+
+/* Bright Colors */
+@define-color base08 #404040; /* Black */
+@define-color base09 #FB7185; /* Red */
+@define-color base0A #2ECC71; /* Green */
+@define-color base0B #F1C40F; /* Yellow */
+@define-color base0C #039BE5; /* Blue */
+@define-color base0D #F48FB1; /* Magenta */
+@define-color base0E #039BE5; /* Cyan */
+@define-color base0F #FFFFFF; /* White */

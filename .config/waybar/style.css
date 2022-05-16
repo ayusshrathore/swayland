@@ -1,7 +1,9 @@
+@import "colorschemes/default.css";
+
 * {
 	border: none;
 	border-radius: 0;
-	font-family: "Inter Nerd Font";
+	font-family: "Inter Nerd Font", "icomoon-feather";
 	font-size: 13px;
 	font-weight: bold; 
 	min-height: 0;
@@ -11,19 +13,22 @@ window#waybar {
 	background-color: transparent;
 }
 
+#workspaces {
+	margin: 0 4px;
+}
+
 #workspaces button {
 	padding: 0 4px;
 	min-width: 20px;
-	/* color: #F06292; */
-	color: #D946EF; 
+	color: @base04;
 }
 
 #workspaces button.focused {
-	color: #42a5f5;
+	color: @base0D;
 }
 
 #workspaces button.urgent {
-	color: #EF4444;
+	color: @base09;
 }
 
 #workspaces button:hover {
@@ -31,17 +36,21 @@ window#waybar {
 }
 
 tooltip { 
-	background-color: #262626;
+	background-color: @base00;
 	border-radius: 5px;
+}
+
+tooltip label {
+	padding: 5px;
 }
 
 #battery,
 #memory,
-#disk,
-#backlight,
 #network,
 #pulseaudio,
 #tray,
+#custom-media,
+#custom-spotify,
 #window {
  	padding: 0 5px;
     margin: 1px 1px;
@@ -50,33 +59,29 @@ tooltip {
 #battery,
 #battery.charging,
 #battery.plugged {
-	color: #E879F9;
+	color: @base05;
 }
 
 #network {
-	color: #86EFAC;
-	font-size: 13.5px;
+	color: @base02;
 }
 
 #pulseaudio,
 #pulseaudio.muted {
-	color: #F48FB1;
+	color: @base09;
 }
 
 #memory {
-	color: #FFEE58;
+	color: @base03;
 }
-
-#pulseaudio.muted { 
-     font-size: 16px; 
-} 
 
 #clock { 
-	color: #4FC3F7; 
+	color: @base04; 
 }
 
-#workspaces {
-	margin: 0 4px;
+#custom-media,
+#custom-spotify {
+	color: @base0A;
 }
 
 @keyframes blink {
@@ -87,10 +92,10 @@ tooltip {
 }
 
 #battery.critical:not(.charging) {
-	background-color: #f53c3c;
+	background-color: @base01;
 	color: #ffffff;
 	animation-name: blink;
-	animation-duration: 0.5s;
+	animation-duration: 0.8s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
